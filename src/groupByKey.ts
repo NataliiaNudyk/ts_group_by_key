@@ -9,7 +9,7 @@ export function groupByKey<T, K extends keyof T>(
   const grouped: GroupsMap<T> = {};
 
   for (const item of items) {
-    const itemKey = item[key] as string;
+    const itemKey = String(item[key]);
 
     grouped[itemKey] = grouped[itemKey] || [];
     grouped[itemKey].push(item);
